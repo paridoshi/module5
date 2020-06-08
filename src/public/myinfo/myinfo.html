@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+<head>
+    <title>
+        User Information
+    </title>
+</head>
+
+
+<body >
+<table ng-if="infoCtrl.mydata.data.name">
+    <tr>
+        <td>First name:</td>
+        <td>{{infoCtrl.mydata.myName}}</td>
+    </tr>
+    <tr>
+        <td>Last name:</td>
+        <td>{{infoCtrl.mydata.lastName}}</td>
+    </tr>
+    <tr>
+        <td>Email Id:</td>
+        <td>{{infoCtrl.mydata.emailId}}</td>
+    </tr>
+    <tr>
+        <td>Phone no:</td>
+        <td>{{infoCtrl.mydata.phone}}</td>
+    </tr>
+    <tr>
+        <td>Favourite:</td>
+        <td>{{infoCtrl.mydata.data.name}}</td>
+        <tr>
+    <td><img src="{{infoCtrl.imgpath}}/images/{{infoCtrl.mydata.data.short_name}}.jpg"> </img></td>
+            <td>Description:{{infoCtrl.mydata.data.description}}</td>
+    </tr>
+    <tr>
+
+
+    </tr>
+</table>
+<div ng-if="!infoCtrl.mydata.data.name">
+    Not signed up yet Sign up now!
+</div>
+</body>
+</html>
