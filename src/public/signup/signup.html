@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+<head>
+    <title>
+        userSignUp
+    </title>
+
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+    <script src="src/public/signup/signup.js"></script>-->
+
+</head>
+<body >
+<form name="myForm" style="background-color: antiquewhite; color:black">
+
+    <p>First Name:
+        <input name="myName" ng-model="reg.myName" required>
+
+        <span ng-if="myForm.myName.$error.required && myForm.myName.$touched">
+ Firstname required        </span>
+
+    </p>
+
+
+    <p>Last Name:
+        <input name="lastName" ng-model="reg.lastName" required>
+
+        <span ng-if="myForm.lastName.$error.required && myForm.lastName.$touched">
+   Lastname required        </span>
+
+    </p>
+
+
+    <p>Email:
+        <input name="emailId" ng-model="reg.emailId" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" required>
+
+        <!--<span ng-if="myForm.EmailId.$error.required && myForm.EmailId.$touched">-->
+        <span ng-if="(myForm.EmailId.$invalid && myForm.EmailId.$touched)  || (myForm.EmailId.$touched && myForm.EmailId.$error.$required) ">
+
+
+ Must be a valid email address: handle@domain format
+      </span>
+
+    </p>
+
+
+    <p>
+        Phone no:
+        <input  name="phone" placeholder="Phone ###-###-####"
+                required     ng-model="reg.phone"
+                pattern="(\d{3})-(\d{3})-(\d{4})">
+
+        <span ng-if="(myForm.phone.$invalid && myForm.phone.$touched)  || (myForm.phone.$touched && myForm.phone.$error.$required) ">
+
+            Phone must be in the format ###-###-####.
+
+          </span>
+    </p>
+
+
+    <p>
+        Menu number:
+
+        <input name="menu_number" ng-model="reg.menu_number" placeholder="no of your favorite dish" required>
+        <span ng-if="myForm.menu_number.$touched && myForm.menu_number.$error.$required ">
+
+Enter a no of your favourite dish
+</span>
+        <span ng-if="reg.completed=='T'"> Your information has been saved</span>
+        <span ng-if="reg.completed=='F'"> No such menu number exists </span>
+    </p>
+
+    <button
+            ng-disabled="myForm.$invalid" ng-click="reg.submit()"> Submit</button>
+
+
+</form>
+
+
+</body>
+</html>
