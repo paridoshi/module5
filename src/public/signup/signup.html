@@ -38,7 +38,7 @@
         <input name="emailId" ng-model="reg.emailId" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" required>
 
         <!--<span ng-if="myForm.EmailId.$error.required && myForm.EmailId.$touched">-->
-        <span ng-if="(myForm.EmailId.$invalid && myForm.EmailId.$touched)  || (myForm.EmailId.$touched && myForm.EmailId.$error.$required) ">
+        <span ng-if="(myForm.emailId.$invalid && myForm.emailId.$touched)  || (myForm.emailId.$touched && myForm.emailId.$error.$required) ">
 
 
  Must be a valid email address: handle@domain format
